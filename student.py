@@ -57,7 +57,15 @@ class Piggy(PiggyParent):
     ****************
     '''
     def katie(self):
-      self.deg_fwd(360)
+      self.fwd(2)
+      deg_fwd(90)
+      self.fwd(2)
+      deg_fwd(90)
+      self.fwd(2)
+      deg_fwd(90)
+      self.fwd(2)
+      deg_fwd(90)
+
       time.sleep(2)
 
     def dance(self):
