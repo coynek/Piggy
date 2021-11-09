@@ -57,16 +57,9 @@ class Piggy(PiggyParent):
     ****************
     '''
     def katie(self):
-      self.fwd(2)
-      deg_fwd(90)
-      self.fwd(2)
-      deg_fwd(90)
-      self.fwd(2)
-      deg_fwd(90)
-      self.fwd(2)
-      deg_fwd(90)
-
-      time.sleep(2)
+      self.right()
+      time.sleep(1)
+      self.stop()
 
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
