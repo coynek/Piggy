@@ -57,14 +57,13 @@ class Piggy(PiggyParent):
     ****************
     '''
     def katie(self):
-      self.right()
-      time.sleep(1)
-      self.right()
-      time.sleep(1)
-      self.right()
-      time.sleep(1)
-      self.right()
-      time.sleep(1)
+      self.right(90)
+      self.fwd()
+      self.right(90)
+      self.fwd()
+      self.right(90)
+      self.fwd()
+      self.right(90)
       self.stop()
 
     def dance(self):
