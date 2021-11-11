@@ -57,7 +57,7 @@ class Piggy(PiggyParent):
     ****************
     '''
     def katie(self):
-      
+      pass
     def square(self):
       for num in range (4):
       self.right()
