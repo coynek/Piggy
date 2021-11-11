@@ -57,17 +57,19 @@ class Piggy(PiggyParent):
     ****************
     '''
     def katie(self):
+      
+    def square(self):
       for num in range (4):
-        self.right()
-        time.sleep(.75)
-        self.fwd()
-        time.sleep(1)
+      self.right()
+      time.sleep(.75)
+      self.fwd()
+      time.sleep(1)
       self.stop()
 
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
-        # TODO: check to see if it's safe before dancing
-        
+          if safe_to_dance():
+            pass        
         # lower-ordered example...
         self.right(primary=50, counter=50)
         time.sleep(2)
