@@ -60,11 +60,11 @@ class Piggy(PiggyParent):
       pass
     def square(self):
       for num in range (4):
-      self.right(90)
-      time.sleep(.75)
-      self.fwd()
-      time.sleep(1)
-      self.stop()
+        self.right(90)
+        time.sleep(.75)
+        self.fwd()
+        time.sleep(1)
+        self.stop()
 
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
