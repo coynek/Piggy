@@ -56,8 +56,14 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
+
+    def go_forward(self):
+      time.sleep(.75)
     def katie(self):
+      if self.distance() < 50 and self.distance() > -50:
       pass
+
+
     def square(self):
       for num in range (4):
         self.right(90)
@@ -68,17 +74,15 @@ class Piggy(PiggyParent):
 
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
-    if safe_to_dance():
-      pass        
-        # lower-ordered example...
-      self.right(primary=50, counter=50)
-      time.sleep(2)
-      self.stop()
-        
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
         pass
+        
+        # lower-ordered example...
+      self.right(primary=50, counter=50)
+      time.sleep(2)
+      self.stop()
 
     def shake(self):
         """ Another example move """
