@@ -57,14 +57,17 @@ class Piggy(PiggyParent):
     ****************
     '''
 
-    def katie(self):
-      if read_distance() < 50:
-        self.stop()
 
-      else:
-        self.fwd()
-        times.sleep(1.2)
-        self.stop()
+
+    def katie(self):
+      while True:
+        if self.read_distance() < 50:
+          self.stop()
+
+        else:
+          self.fwd()
+          times.sleep(1.2)
+          self.stop()
 
     def square(self):
       for num in range (4):
