@@ -58,7 +58,7 @@ class Piggy(PiggyParent):
     '''
 
     def katie(self):
-      if self.distance() < 50:
+      if read_distance() < 50:
         self.stop()
 
       else:
