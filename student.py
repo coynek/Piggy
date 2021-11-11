@@ -68,7 +68,7 @@ class Piggy(PiggyParent):
 
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
-          if safe_to_dance():
+    if safe_to_dance():
             pass        
         # lower-ordered example...
         self.right(primary=50, counter=50)
