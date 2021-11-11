@@ -59,7 +59,8 @@ class Piggy(PiggyParent):
 
     def katie(self):
       if self.distance() < 50:
-      self.stop()
+        self.stop()
+
     else:
       self.fwd()
       times.sleep(1.2)
