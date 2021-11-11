@@ -61,10 +61,10 @@ class Piggy(PiggyParent):
       if self.distance() < 50:
         self.stop()
 
-    else:
-      self.fwd()
-      times.sleep(1.2)
-      self.stop()
+      else:
+        self.fwd()
+        times.sleep(1.2)
+        self.stop()
 
     def square(self):
       for num in range (4):
