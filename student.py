@@ -73,7 +73,7 @@ class Piggy(PiggyParent):
     def square(self):
       for num in range (4):
         self.right(90)
-        time.sleep(3)
+        time.sleep(15)
         self.fwd(10)
         self.stop()
         time.sleep(1)
