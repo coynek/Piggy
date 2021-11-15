@@ -65,7 +65,7 @@ class Piggy(PiggyParent):
           self.stop()
         else:
           self.fwd()
-          times.sleep(1.2)
+          time.sleep(1.2)
           self.stop()
 
     def square(self):
@@ -77,7 +77,12 @@ class Piggy(PiggyParent):
         self.stop()
 
     def dance(self):
-        """A higher-ordered algorithm to make your robot dance"""
+      for num in range (10):
+        self.right(2)
+        self.fwd()
+        time.sleep(.4)
+        self.back()
+        time.sleep(.4)
 
     def safe_to_dance(self):
       """ Does a 360 distance check and returns true if safe """
