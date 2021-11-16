@@ -84,6 +84,10 @@ class Piggy(PiggyParent):
         self.fwd()
         time.sleep(second)
         self.stop()
+    def go_back(self, second):
+        self.back()
+        time.sleep(second)
+        self.stop()
 
     def dance(self):
       for num in range (10):
@@ -104,6 +108,13 @@ class Piggy(PiggyParent):
         """ Another example move """
         self.deg_fwd(720)
         self.stop()
+
+    def go_to_wall_then_go_back(self):
+        """Robots reads wall and reverses"""
+        if self.read_distance() < 200
+          self.go_fwd(1)
+        else:
+          self.go_back(1)
 
     def example_move(self):
         """this is an example dance move that should be replaced by student-created content"""
