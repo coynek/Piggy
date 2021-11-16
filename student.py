@@ -72,7 +72,7 @@ class Piggy(PiggyParent):
 
     def square(self):
       for num in range (4):
-        self.turn_right(.75)
+        self.turn_right(.85)
         self.go_fwd(1)
         
 
