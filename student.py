@@ -116,7 +116,8 @@ class Piggy(PiggyParent):
           self.go_fwd(1)
         else:
           self.go_back(1)
-    def back_to_back(self):
+
+    def backtoback(self):
       """ Robot goes to wall, turns around, goes to the opposite wall, turns around and so on..."""
         if self.read_distance() > 200
           self.go_back(1)
