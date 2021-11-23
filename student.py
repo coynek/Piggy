@@ -118,11 +118,11 @@ class Piggy(PiggyParent):
           self.go_back(1)
     def back_to_back(self):
       """ Robot goes to wall, turns around, goes to the opposite wall, turns around and so on..."""
-      if self.read_distance() > 200
-        self.go_back(1)
-        turn_to_deg(180)
-      else:
-        self.go_fwd(1)
+        if self.read_distance() > 200
+          self.go_back(1)
+          turn_to_deg(180)
+        else:
+          self.go_fwd(1)
     def example_move(self):
         """this is an example dance move that should be replaced by student-created content"""
         self.right() # start rotating right
