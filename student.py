@@ -114,7 +114,7 @@ class Piggy(PiggyParent):
     def backtoback(self):
         """Robots reads wall and reverses"""
         while True:
-          if self.read_distance() < 100:
+          if self.read_distance() > 100:
             self.fwd()
           else:
             self.right()
