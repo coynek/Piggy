@@ -118,7 +118,7 @@ class Piggy(PiggyParent):
             self.fwd()
           else:
             self.right()
-            time.sleep(3)
+            time.sleep(1.5)
           
 
     def example_move(self):
