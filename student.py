@@ -44,7 +44,8 @@ class Piggy(PiggyParent):
                 "v": ("Katie's Test", self.katie),
                 "b": ("Katie's Square", self.square),
                 "d": ("Katie's Dance", self.dance),
-                "r": ("Katie's Endless Cycle of Running into Walls",self.backtoback)
+                "r": ("Katie's Endless Cycle of Running into Walls",self.backtoback),
+                "m": ("Katie's Robot moves Around Box", self.move_around_box)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -119,6 +120,11 @@ class Piggy(PiggyParent):
           else:
             self.right()
             time.sleep(1.5)
+
+      def move_around_box(self):
+        if self.read_distance() > 100:
+          self.right(.75)
+          
           
 
     def example_move(self):
@@ -150,10 +156,21 @@ class Piggy(PiggyParent):
             self.fwd()
             time.sleep(.01)
         self.stop()
+
         # TODO: scan so we can decide left or right
         # TODO: average the right side of the scan dict
         # TODO: average the left side of the scan dict
         
+    def closer_edge(self):
+        self.fwd()
+        while True: 
+          if self.read_distance() < 350:
+            self.servo(1000)
+    def fwd_w_scan(self):
+        pass
+    def swerve(self):
+        pass
+
 
 
 ###########
