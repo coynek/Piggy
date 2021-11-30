@@ -172,10 +172,14 @@ class Piggy(PiggyParent):
               self.turn_right(.85)
               self.go_fwd(2)
               self.turn_left(.85)
+              self.servo(1475)
+              self.fwd()
             if right < left:
               self.turn_left(.85)
               self.go_fwd(2)
               self.turn_right(.85)
+              self.servo(1475)
+              self.fwd()
 
     def fwd_w_scan(self):
         pass
