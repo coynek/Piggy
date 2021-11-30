@@ -164,7 +164,10 @@ class Piggy(PiggyParent):
             right = self.read_distance()
             self.servo(1950)
             left = self.read_distance()
-            
+          if right < left 
+            self.turn_right(.85)
+            self.go_fwd(2)
+            self.turn_left(.85)
 
     def fwd_w_scan(self):
         pass
