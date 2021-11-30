@@ -159,7 +159,13 @@ class Piggy(PiggyParent):
         self.fwd()
         while True: 
           if self.read_distance() < 350:
+            self.stop()
             self.servo(1000)
+            right = self.read_distance()
+            self.servo(1950)
+            left = self.read_distance()
+            
+
     def fwd_w_scan(self):
         pass
     def swerve(self):
