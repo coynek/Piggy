@@ -76,6 +76,10 @@ class Piggy(PiggyParent):
         self.right()
         time.sleep(second)
         self.stop()
+    def turn_left(self, second):
+        self.left()
+        time.sleep(second)
+        self.stop()
     def go_fwd(self, second):
         self.fwd()
         time.sleep(second)
@@ -164,10 +168,14 @@ class Piggy(PiggyParent):
             right = self.read_distance()
             self.servo(1950)
             left = self.read_distance()
-            if right < left:
+            if right > left:
               self.turn_right(.85)
               self.go_fwd(2)
               self.turn_left(.85)
+            if right < left:
+              self.turn_left(.85)
+              self.go_fwd(2)
+              self.turn_right(.85)
 
     def fwd_w_scan(self):
         pass
