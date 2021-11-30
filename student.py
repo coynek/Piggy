@@ -121,7 +121,7 @@ class Piggy(PiggyParent):
             self.right()
             time.sleep(1.5)
 
-      def move_around_box(self):
+    def move_around_box(self):
         if self.read_distance() > 100:
           self.right(.75)
           
