@@ -45,7 +45,8 @@ class Piggy(PiggyParent):
                 "b": ("Katie's Square", self.square),
                 "d": ("Katie's Dance", self.dance),
                 "r": ("Katie's Endless Cycle of Running into Walls",self.backtoback),
-                "m": ("Katie's Robot moves Around Box", self.move_around_box)
+                "m": ("Katie's Robot moves Around Box", self.move_around_box),
+                "z": ("Katie's Slow Read", self.slow_read)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -178,7 +179,7 @@ class Piggy(PiggyParent):
               self.servo(1200) 
               self.servo(1300) 
               self.servo(1475)
-               
+
     def closer_edge(self):
         self.fwd()
         while True: 
