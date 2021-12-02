@@ -165,7 +165,7 @@ class Piggy(PiggyParent):
         while True:
               self.servo(1475)
               time.sleep(.15)  
-              self.servo(1500)
+              self.servo(1675)
               time.sleep(.15)        
               self.servo(1275)
               time.sleep(.15)
