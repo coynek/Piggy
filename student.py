@@ -160,7 +160,7 @@ class Piggy(PiggyParent):
         # TODO: average the right side of the scan dict
         # TODO: average the left side of the scan dict
 
-    def slow_read():
+    def slow_read(self):
         self.fwd()
         while True:
           if self.read_distance() < 100:
