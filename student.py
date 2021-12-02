@@ -161,7 +161,6 @@ class Piggy(PiggyParent):
         # TODO: average the left side of the scan dict
 
     def slow_read(self):
-              while True:
         self.fwd()
         while True:
           if self.read_distance() < 100:
@@ -172,7 +171,8 @@ class Piggy(PiggyParent):
               self.servo(1500)
               time.sleep(.15)        
               self.servo(1275)
-              tim
+              time.sleep(.15)
+            
               
 
     def closer_edge(self):
