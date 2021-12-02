@@ -161,24 +161,19 @@ class Piggy(PiggyParent):
         # TODO: average the left side of the scan dict
 
     def slow_read(self):
+              while True:
         self.fwd()
         while True:
           if self.read_distance() < 100:
             self.stop()
             for num in range(2):
-              self.servo(1475)  
-              self.servo(1600)        
-              self.servo(1800)
-              self.servo(2000)
-              self.servo(1800) 
-              self.servo(1600)       
               self.servo(1475)
-              self.servo(1300)        
-              self.servo(1200)     
-              self.servo(1000) 
-              self.servo(1200) 
-              self.servo(1300) 
-              self.servo(1475)
+              time.sleep(.15)  
+              self.servo(1500)
+              time.sleep(.15)        
+              self.servo(1275)
+              tim
+              
 
     def closer_edge(self):
         self.fwd()
