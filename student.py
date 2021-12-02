@@ -163,9 +163,6 @@ class Piggy(PiggyParent):
     def slow_read(self):
         self.fwd()
         while True:
-          if self.read_distance() < 100:
-            self.stop()
-            for num in range(2):
               self.servo(1475)
               time.sleep(.15)  
               self.servo(1500)
