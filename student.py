@@ -176,11 +176,11 @@ class Piggy(PiggyParent):
          self.right(primary=90, counter=-90)
 
     def swerve_right(self):
-           self.right(primary=-90, counter=90)
+            self.right(primary=-90, counter=90)
 
 
 
-      """" if self.read_distance() < 100:
+            """" if self.read_distance() < 100:
             for num in range(2):""""
 
     def closer_edge(self):
