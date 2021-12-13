@@ -180,8 +180,8 @@ class Piggy(PiggyParent):
 
 
 
-            """" if self.read_distance() < 100:
-            for num in range(2):""""
+            """ if self.read_distance() < 100:
+            for num in range(2):"""
 
     def closer_edge(self):
         self.fwd()
