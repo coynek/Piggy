@@ -264,11 +264,7 @@ class Piggy(PiggyParent):
           time.sleep(1)
           self.fwd()
           time.sleep(1)
-            #self.Choice()
-
-
-
-
+        
 ###########
 ## MAIN APP
 if __name__ == "__main__":  # only run this loop if this is the main file
