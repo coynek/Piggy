@@ -179,6 +179,7 @@ class Piggy(PiggyParent):
             
     def swerve_left(self):
       self.fwd()
+      time.sleep(2)
       self.left(primary=30, counter=90)
       time.sleep(.8)
       self.left(primary=90, counter=30)
