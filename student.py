@@ -225,12 +225,12 @@ class Piggy(PiggyParent):
         self.servo(1000)
         time.sleep(1)
         self.stop()
-          #global first
+        #global first
         first = self.read_distance()
         self.servo(2000)
         time.sleep(1)
         self.stop()
-          #global second
+        #global second
         far_dist = 2000
         second = self.read_distance()
         self.servo(1400)
