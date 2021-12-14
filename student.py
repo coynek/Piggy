@@ -175,26 +175,27 @@ class Piggy(PiggyParent):
               time.sleep(.15)
 
     def swr(self, dir):
-          self.stop()
-          self.servo(self.MIDPOINT)
-          if "left" in dir:
-            self.stop()
-            self.left(primary = 60, counter = 30)
-            time.sleep(1.5)
-            self.fwd()
-            time.sleep(1.5)
-            self.right(primary = 60, counter=30)
-            time.sleep(1.5) 
-            self.fwd()
-          if "right" in dir:
-            self.left(primary = 30, counter=60)
-            time.sleep(1.5)
-            self.fwd()
-            time.sleep(1.5)
-            self.right(primary = 30, counter = 60)
-            time.sleep(1.5)
-            self.fwd()
-            time.sleep(1.5)
+
+      self.stop()
+      self.servo(self.MIDPOINT)
+      if "left" in dir:
+        self.stop()
+        self.left(primary = 60, counter = 30)
+        time.sleep(1.5)
+        self.fwd()
+        time.sleep(1.5)
+        self.right(primary = 60, counter=30)
+        time.sleep(1.5) 
+        self.fwd()
+      if "right" in dir:
+        self.left(primary = 30, counter=60)
+        time.sleep(1.5)
+        self.fwd()
+        time.sleep(1.5)
+        self.right(primary = 30, counter = 60)
+        time.sleep(1.5)
+        self.fwd()
+        time.sleep(1.5)
 
 
 
