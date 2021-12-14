@@ -175,7 +175,6 @@ class Piggy(PiggyParent):
               time.sleep(.15)
 
     def swr(self, dir):
-
       self.stop()
       self.servo(self.MIDPOINT)
       if "left" in dir:
@@ -203,7 +202,6 @@ class Piggy(PiggyParent):
 
     #edward helped me with this the commented text was what I tried. why did it not work? 
     def turner(self):
-      
       while True:
         if(self.read_distance() > 200):
           self.fwd()  
@@ -219,7 +217,6 @@ class Piggy(PiggyParent):
       
         
     def Choice(self):
-
       if(self.read_distance() < 299):
         self.stop()
         self.servo(1000)
@@ -255,7 +252,6 @@ class Piggy(PiggyParent):
         else:
           self.back()
           time.sleep(1)
-
           self.right()
           time.sleep(1)
           self.fwd()
@@ -269,9 +265,8 @@ class Piggy(PiggyParent):
 ## MAIN APP
 if __name__ == "__main__":  # only run this loop if this is the main file
 
-  p = Piggy()
-
-    if sys.version_info < (3, 0):
+      p = Piggy()
+      if sys.version_info < (3, 0):
         sys.stdout.write("Sorry, requires Python 3.x\n")
         p.quit()
 
