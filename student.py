@@ -176,75 +176,95 @@ class Piggy(PiggyParent):
               self.servo(1275)
               time.sleep(.15)
 
-
-            
-    def swerve_right(self):
-      self.fwd()
-      time.sleep(2)
-      self.left(primary=30, counter=90)
-      time.sleep(.8)
-      self.left(primary=90, counter=30)
-      time.sleep(.8)
-      self.fwd()
-      time.sleep(1)
-
-
-
-    def swerve_left(self):
-      self.fwd()
-      time.sleep(2)
-      self.right(primary=-90, counter=90)
-      time.sleep(.8)
-      self.left(primary=90, counter=30)
-      time.sleep(.8)
-      self.fwd()
-      time.sleep()
-
-    def closer_edge(self):
+def swr(self, dir):
+      self.stop()
+      self.servo(self.MIDPOINT)
+      if "left" in dir:
+        self.stop()
+        self.left(primary = 60, counter = 30)
+        time.sleep(1.5)
         self.fwd()
-        while True: 
-          if self.read_distance() < 200:
-            self.stop()
-            self.servo(1000)
-            right = self.read_distance()
-            self.servo(1950)
-            left = self.read_distance()
-            if right > left:
-              self.turn_right(.85)
-              self.go_fwd(2)
-              self.turn_left(.85)
-              self.servo(1475)
-              self.fwd()
-            if right < left:
-              self.turn_left(.85)
-              self.go_fwd(2)
-              self.turn_right(.85)
-              self.servo(1475)
-              self.fwd()
+        time.sleep(1.5)
+        self.right(primary = 60, counter=30)
+        time.sleep(1.5) 
+        self.fwd()
+      if "right" in dir:
+        self.left(primary = 30, counter=60)
+        time.sleep(1.5)
+        self.fwd()
+        time.sleep(1.5)
+        self.right(primary = 30, counter = 60)
+        time.sleep(1.5)
+        self.fwd()
+        time.sleep(1.5)
 
 
 
-  
 
-    def fwd_w_scan(self):
-        while True:
-          self.fwd() 
-          if self.read_distance() < 200:
-            self.servo(1000)
-            right = self.read_distance()
-            self.servo(1950)
-            left = self.read_distance()
-            if right > left:
-              self.swerve_right()
-            elif left > right:
-              self.swerve_left()
-            else:
-              self.closer_edge()
 
-    def swerve(self):
-      self.fwd()
-      self.slow_read()
+   #edward helped me with this the commented text was what I tried. why did it not work?   
+    def turner(self):
+      while True:
+        if(self.read_distance() > 200):
+          self.fwd()  
+        elif(self.read_distance() < 199):
+          self.right()
+          time.sleep(1)
+          self.fwd()
+          time.sleep(1)
+          self.left()
+          time.sleep(1)
+          self.fwd()
 
+      
+        
+    def Choice(self):
+
+      if(self.read_distance() < 299):
+        self.stop()
+        self.servo(1000)
+        time.sleep(1)
+        self.stop()
+          #global first
+        first = self.read_distance()
+        self.servo(2000)
+        time.sleep(1)
+        self.stop()
+          #global second
+        far_dist = 2000
+        second = self.read_distance()
+        self.servo(1400)
+        time.sleep(1)
+        self.stop()
+        if (first > far_dist):
+          self.right()
+          time.sleep(1)
+          self.stop()
+          self.fwd()
+          time.sleep(1)
+          self.left()
+          self.fwd
+        elif (second > far_dist): 
+          self.left()
+          time.sleep(1)
+          self.stop()
+          self.fwd()
+          time.sleep(1)
+          self.right()
+          self.fwd
+        else:
+          self.back()
+          time.sleep(1)
+
+          self.right()
+          time.sleep(1)
+          self.fwd()
+          time.sleep(1)
+          self.left()
+          time.sleep(1)
+          self.fwd()
+          time.sleep(1)
+            #self.Choice()
 
 
 
