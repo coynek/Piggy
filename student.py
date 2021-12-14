@@ -47,8 +47,8 @@ class Piggy(PiggyParent):
                 "r": ("Katie's Endless Cycle of Running into Walls",self.backtoback),
                 "m": ("Katie's Robot moves Around Box", self.move_around_box),
                 "z": ("Katie's Slow Read", self.slow_read),
-                "l": ("Katie's L swerve test", self.swerve_left),
-                "t": ("Katie's R swerve test", self.swerve_right)
+                "t": ("Katie's R swerve test", self.swerve_left),
+                "l": ("Katie's L swerve test", self.swerve_right)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -177,7 +177,7 @@ class Piggy(PiggyParent):
 
 
             
-    def swerve_left(self):
+    def swerve_right(self):
       self.fwd()
       time.sleep(2)
       self.left(primary=30, counter=90)
@@ -189,8 +189,15 @@ class Piggy(PiggyParent):
 
 
 
-    def swerve_right(self):
-            self.right(primary=-90, counter=90)
+    def swerve_left(self):
+      self.fwd()
+      time.sleep(2)
+      self.right(primary=-90, counter=90)
+      time.sleep(.8)
+      self.left(primary=90, counter=30)
+      time.sleep(.8)
+      self.fwd()
+      time.sleep()
 
 
 
