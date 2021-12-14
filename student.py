@@ -273,15 +273,15 @@ class Piggy(PiggyParent):
 ## MAIN APP
 if __name__ == "__main__":  # only run this loop if this is the main file
 
-    p = Piggy()
+  p = Piggy()
 
     if sys.version_info < (3, 0):
         sys.stdout.write("Sorry, requires Python 3.x\n")
         p.quit()
 
-    try:
+      try:
         while True:  # app loop
-            p.menu()
+          p.menu()
 
-    except KeyboardInterrupt: # except the program gets interrupted by Ctrl+C on the keyboard.
+        except KeyboardInterrupt: # except the program gets interrupted by Ctrl+C on the keyboard.
         p.quit()  
