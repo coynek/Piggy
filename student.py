@@ -174,27 +174,27 @@ class Piggy(PiggyParent):
               self.servo(1275)
               time.sleep(.15)
 
-def swr(self, dir):
-      self.stop()
-      self.servo(self.MIDPOINT)
-      if "left" in dir:
-        self.stop()
-        self.left(primary = 60, counter = 30)
-        time.sleep(1.5)
-        self.fwd()
-        time.sleep(1.5)
-        self.right(primary = 60, counter=30)
-        time.sleep(1.5) 
-        self.fwd()
-      if "right" in dir:
-        self.left(primary = 30, counter=60)
-        time.sleep(1.5)
-        self.fwd()
-        time.sleep(1.5)
-        self.right(primary = 30, counter = 60)
-        time.sleep(1.5)
-        self.fwd()
-        time.sleep(1.5)
+    def swr(self, dir):
+          self.stop()
+          self.servo(self.MIDPOINT)
+          if "left" in dir:
+            self.stop()
+            self.left(primary = 60, counter = 30)
+            time.sleep(1.5)
+            self.fwd()
+            time.sleep(1.5)
+            self.right(primary = 60, counter=30)
+            time.sleep(1.5) 
+            self.fwd()
+          if "right" in dir:
+            self.left(primary = 30, counter=60)
+            time.sleep(1.5)
+            self.fwd()
+            time.sleep(1.5)
+            self.right(primary = 30, counter = 60)
+            time.sleep(1.5)
+            self.fwd()
+            time.sleep(1.5)
 
 
 
@@ -202,6 +202,7 @@ def swr(self, dir):
 
    #edward helped me with this the commented text was what I tried. why did it not work?   
     def turner(self):
+      
       while True:
         if(self.read_distance() > 200):
           self.fwd()  
