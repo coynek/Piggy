@@ -219,8 +219,24 @@ class Piggy(PiggyParent):
               self.servo(1475)
               self.fwd()
 
+
+
+  
+
     def fwd_w_scan(self):
-        pass
+        self.fwd()
+        while True: 
+          if self.read_distance() < 200:
+            self.servo(1000)
+            right = self.read_distance()
+            self.servo(1950)
+            left = self.read_distance()
+            if right > left:
+              self.swerve_right()
+            elif left > right:
+              self.swerve_left()
+            else:
+              self.closer_edge()
 
     def swerve(self):
       self.fwd()
