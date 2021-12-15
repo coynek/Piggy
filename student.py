@@ -214,93 +214,78 @@ class Piggy(PiggyParent):
           time.sleep(1)
           self.fwd()
 
-  def swerve_right(self):
-self.fwd()
-time.sleep(2)
-self.left(primary=30, counter=90)
-time.sleep(.8)
-self.left(primary=90, counter=30)
-time.sleep(.8)
-self.fwd()
-time.sleep(1)
+    def swerve_right(self):
+        self.left(primary=90, counter=30)
+        time.sleep(.8)
+        self.right(primary=90, counter=30)
+        time.sleep(.8)
+        self.fwd()
 
-def swerve_left(self):
-self.fwd()
-time.sleep(2)
-self.right(primary=-90, counter=90)
-time.sleep(.8)
-self.left(primary=90, counter=30)
-time.sleep(.8)
-self.fwd()
-time.sleep()
+    def swerve_left(self):
+        self.right(primary=90, counter=30)
+        time.sleep(.8)
+        self.left(primary=90, counter=30)
+        time.sleep(.8)
+        self.fwd()
 
-def closer_edge(self):
-self.fwd()
-while True:
-if self.read_distance() < 200:
-self.stop()
-self.servo(1000)
-right = self.read_distance()
-self.servo(1950)
-left = self.read_distance()
-if right > left:
-self.turn_right(.85)
-self.go_fwd(2)
-self.turn_left(.85)
-self.servo(1475)
-self.fwd()
-if right < left:
-self.turn_left(.85)
-self.go_fwd(2)
-self.turn_right(.85)
-self.servo(1475)
-self.fwd()
-        
+    def closer_edge(self):
+        self.fwd()
+        while True:
+        if self.read_distance() < 200:
+          self.stop()
+          self.servo(1000)
+          right = self.read_distance()
+          self.servo(1950)
+          left = self.read_distance()
+          if right > left:
+            self.turn_right(.85)
+            self.go_fwd(2)
+            self.turn_left(.85)
+            self.servo(1475)
+            self.fwd()
+          if right < left:
+            self.turn_left(.85)
+            self.go_fwd(2)
+            self.turn_right(.85)
+            self.servo(1475)
+            self.fwd()
+
+    
     def Choice(self):
-      if(self.read_distance() < 299):
-        self.stop()
-        self.servo(1000)
-        time.sleep(1)
-        self.stop()
-        #global first
-        first = self.read_distance()
-        self.servo(2000)
-        time.sleep(1)
-        self.stop()
-        #global second
-        far_dist = 2000
-        second = self.read_distance()
-        self.servo(1400)
-        time.sleep(1)
-        self.stop()
-        if (first > far_dist):
-          self.right()
-          time.sleep(1)
-          self.stop()
-          self.fwd()
-          time.sleep(1)
-          self.left()
-          self.fwd
-        elif (second > far_dist): 
-          self.left()
-          time.sleep(1)
-          self.stop()
-          self.fwd()
-          time.sleep(1)
-          self.right()
-          self.fwd
-        else:
-          self.back()
-          time.sleep(1)
-          self.right()
-          time.sleep(1)
-          self.fwd()
-          time.sleep(1)
-          self.left()
-          time.sleep(1)
-          self.fwd()
-          time.sleep(1)
-        
+      self.servo(1000)
+      self.servo(1200)
+      self.servo(1400)
+      self.servo(1600)
+      self.servo(1800)
+      self.servo(2000)
+        if right > left:
+          self.swerve_left()
+        if right < left:
+          self.swerve_right()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ###########
 ## MAIN APP
 if __name__ == "__main__":  # only run this loop if this is the main file
