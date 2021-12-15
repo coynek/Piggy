@@ -238,13 +238,13 @@ class Piggy(PiggyParent):
           left = self.read_distance()
           if right > left:
             self.turn_right(.85)
-            self.go_fwd(2)
+            self.go_fwd(1)
             self.turn_left(.85)
             self.servo(1475)
             self.fwd()
           if right < left:
             self.turn_left(.85)
-            self.go_fwd(2)
+            self.go_fwd(1)
             self.turn_right(.85)
             self.servo(1475)
             self.fwd()
