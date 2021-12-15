@@ -47,7 +47,7 @@ class Piggy(PiggyParent):
                 "r": ("Katie's Endless Cycle of Running into Walls",self.backtoback),
                 "m": ("Katie's Robot moves Around Box", self.move_around_box),
                 "z": ("Katie's Slow Read", self.slow_read),
-                "y": ("Katie's scanning and swerving", self.swr),
+                "y": ("Katie's scanning and swerving", self.Choice),
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
