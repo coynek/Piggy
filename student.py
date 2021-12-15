@@ -250,24 +250,28 @@ class Piggy(PiggyParent):
 
     
     def Choice(self):
-      self.servo(1000)
-      time.sleep(.1)
-      if self.read_distance() < 300:
-        self.servo(self.MIDPOINT)
+      while True:
+        self.fwd()
+        self.servo(1000)
         time.sleep(.1)
-        if self.read_distance() > 300:
-          self.swerve_left()
-        else:
-          self.closer_edge()  
-      self.servo(2000)
-      if self.read_distance() < 300:
-        self.servo(self.MIDPOINT)
+        if self.read_distance() < 300:
+          self.stop()
+          self.servo(self.MIDPOINT)
+          time.sleep(.1)
+          if self.read_distance() > 300:
+            self.swerve_left()
+          else:
+            self.closer_edge()  
+        self.servo(2000)
+        if self.read_distance() < 300:
+          self.stop()
+          self.servo(self.MIDPOINT)
+          time.sleep(.1)
+          if self.read_distance() > 300:
+            self.swerve_right()
+          else:
+            self.closer_edge()
         time.sleep(.1)
-        if self.read_distance() > 300:
-          self.swerve_right()
-        else:
-          self.closer_edge()
-      time.sleep(.1)
 
        
 
