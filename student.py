@@ -214,14 +214,14 @@ class Piggy(PiggyParent):
           time.sleep(1)
           self.fwd()
 
-    def swerve_right(self):
+    def swerve_left(self):
         self.left(primary=90, counter=30)
         time.sleep(.8)
         self.right(primary=90, counter=30)
         time.sleep(.8)
         self.fwd()
 
-    def swerve_left(self):
+    def swerve_right(self):
         self.right(primary=90, counter=30)
         time.sleep(.8)
         self.left(primary=90, counter=30)
@@ -252,11 +252,24 @@ class Piggy(PiggyParent):
     
     def Choice(self):
       self.servo(1000)
-      self.servo(1200)
-      self.servo(1400)
-      self.servo(1600)
-      self.servo(1800)
+      time.sleep(.1)
+      if self.read_distance() < 300:
+        self.servo(self.MIDPOINT)
+        time.sleep(.1)
+        if self.read_distance() > 300:
+          self.swerve_left()
+        else:
+          self.closer_edge()  
       self.servo(2000)
+      if self.read_distance() < 300:
+        self.servo(self.MIDPOINT)
+        time.sleep(.1)
+        if self.read_distance() > 300:
+          self.swerve_right()
+        else:
+          self.closer_edge()
+      time.sleep(.1)
+
        
 
 
