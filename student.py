@@ -247,7 +247,6 @@ class Piggy(PiggyParent):
             self.go_fwd(1)
             self.turn_right(.85)
             self.servo(1475)
-            self.fwd()
 
     
     def Choice(self):
