@@ -47,7 +47,7 @@ class Piggy(PiggyParent):
                 "r": ("Katie's Endless Cycle of Running into Walls",self.backtoback),
                 "m": ("Katie's Robot moves Around Box", self.move_around_box),
                 "z": ("Katie's Slow Read", self.slow_read),
-                "y": ("Katie's scanning and swerving", self.dir),
+                "y": ("Katie's scanning and swerving", self.swr),
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -214,7 +214,47 @@ class Piggy(PiggyParent):
           time.sleep(1)
           self.fwd()
 
-      
+  def swerve_right(self):
+self.fwd()
+time.sleep(2)
+self.left(primary=30, counter=90)
+time.sleep(.8)
+self.left(primary=90, counter=30)
+time.sleep(.8)
+self.fwd()
+time.sleep(1)
+
+def swerve_left(self):
+self.fwd()
+time.sleep(2)
+self.right(primary=-90, counter=90)
+time.sleep(.8)
+self.left(primary=90, counter=30)
+time.sleep(.8)
+self.fwd()
+time.sleep()
+
+def closer_edge(self):
+self.fwd()
+while True:
+if self.read_distance() < 200:
+self.stop()
+self.servo(1000)
+right = self.read_distance()
+self.servo(1950)
+left = self.read_distance()
+if right > left:
+self.turn_right(.85)
+self.go_fwd(2)
+self.turn_left(.85)
+self.servo(1475)
+self.fwd()
+if right < left:
+self.turn_left(.85)
+self.go_fwd(2)
+self.turn_right(.85)
+self.servo(1475)
+self.fwd()
         
     def Choice(self):
       if(self.read_distance() < 299):
