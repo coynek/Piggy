@@ -257,10 +257,7 @@ class Piggy(PiggyParent):
       self.servo(1600)
       self.servo(1800)
       self.servo(2000)
-        if right > left:
-          self.swerve_left()
-        if right < left:
-          self.swerve_right()
+       
 
 
 
