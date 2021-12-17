@@ -48,6 +48,7 @@ class Piggy(PiggyParent):
                 "m": ("Katie's Robot moves Around Box", self.move_around_box),
                 "z": ("Katie's Slow Read", self.slow_read),
                 "y": ("Katie's scanning and swerving", self.Choice),
+                "k": ("Katie's Maze Mode", self.maze_mode)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -273,9 +274,23 @@ class Piggy(PiggyParent):
             self.closer_edge()
         time.sleep(.1)
 
-       
+    def maze_mode(self):
+      while True:
+        self.fwd()
+        self.servo(self.MIDPOINT)
+        if self.read_distance() < 300:
+          self.stop()
+          self.servo(2000)
+          time.sleep(.1)
+          if self.read_distance() > 200:
+             self.stop()
+             self.right()
+             time.sleep(1)
+             self.fwd()
 
 
+
+    
 
 
 
