@@ -288,8 +288,10 @@ class Piggy(PiggyParent):
              time.sleep(1)
              self.fwd()
           else:
-            self.sleep(1)
-            self.right(1)
+            self.stop()
+            self.right()
+            time.sleep(1)
+            self.fwd()
 
 
 
